@@ -1,0 +1,9 @@
+MainWindow:
+	
+	- on_info_button_clicked: botón para abrir la ventana de info del juego.
+	- cargar_planilla_de_control: ingresa Ítems a la QListWidget y desactiva la 					      selección de la misma.
+	- on_jugar_button_clicked: conecta el botón jugar con la función de iniciar 					   contador.
+	- Iniciar_contador: conecta el label con la librería QTimer para crear un 				    temporizador.
+	- Contador: Utiliza un int para llevar el conteo de los segundos restantes y 			    verifica si llegó a 0 con un if.
+
+Reglas: inicia una serie de Labels para mostrar en otra ventana las reglas de juego.

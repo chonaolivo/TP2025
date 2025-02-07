@@ -1,0 +1,64 @@
+class creardocumentos
+{
+private:
+    void Crear_Archivos(QWidget* parent) {
+        // Abrir el archivo de salida (DNI.txt)
+        std::ofstream archivoSalida("DNI.txt");
+        
+        if (!archivoSalida.is_open()) {
+            QMessageBox::warning(parent, "Error", "No se pudo abrir el archivo de salida DNI.txt");
+            return;
+        }
+
+        // Archivos de entrada
+        std::ifstream archivo1("archivo1.txt");
+        std::ifstream archivo2("archivo2.txt");
+        std::ifstream archivo3("archivo3.txt");
+        std::ifstream archivo4("archivo4.txt");
+        std::ifstream archivo5("archivo5.txt");
+        std::ifstream archivo6("archivo6.txt");
+
+        // Comprobar si los archivos se abren correctamente
+        if (!archivo1.is_open() || !archivo2.is_open() || !archivo3.is_open() ||
+            !archivo4.is_open() || !archivo5.is_open() || !archivo6.is_open()) {
+            QMessageBox::warning(parent, "Error", "No se pudo abrir uno de los archivos de entrada");
+            return;
+        }
+
+        std::string linea;
+
+        // Leer una línea de cada archivo y escribirla en el archivo de salida
+        if (std::getline(archivo1, linea)) {
+            archivoSalida << linea << std::endl;  // Escribir la línea en el archivo de salida
+        }
+        if (std::getline(archivo2, linea)) {
+            archivoSalida << linea << std::endl;
+        }
+        if (std::getline(archivo3, linea)) {
+            archivoSalida << linea << std::endl;
+        }
+        if (std::getline(archivo4, linea)) {
+            archivoSalida << linea << std::endl;
+        }
+        if (std::getline(archivo5, linea)) {
+            archivoSalida << linea << std::endl;
+        }
+        if (std::getline(archivo6, linea)) {
+            archivoSalida << linea << std::endl;
+        }
+
+        // Cerrar los archivos
+        archivo1.close();
+        archivo2.close();
+        archivo3.close();
+        archivo4.close();
+        archivo5.close();
+        archivo6.close();
+        archivoSalida.close();
+    }
+
+public:
+    creardocumentos(QWidget* parent) {
+        Crear_Archivos(parent);
+    }
+};
